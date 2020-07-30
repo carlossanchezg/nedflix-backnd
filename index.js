@@ -1,3 +1,7 @@
+require('dotenv').config();
+require('./database');
+// eslint-disable-next-line no-unused-vars
+const colors = require('colors');
 const api = require('./api');
 
 const PORT = 3000;
