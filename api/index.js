@@ -10,4 +10,7 @@ api.get('/', (req, res) => {
   // res.json({ message: 'Hi from nedflix 🥳' });
 });
 
+// Routes
+api.use('/api', require('../routes'));
+
 module.exports = api;
