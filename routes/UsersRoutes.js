@@ -7,10 +7,10 @@ const { UsersController } = require('../controllers');
 // CREATE
 router.post('/users', UsersController.create);
 
-// READ (ALL)
-router.get('/users', UsersController.getUsers);
+// // READ (ALL)
+// router.get('/users', UsersController.getUsers);
 
-// READ (ONE)
-router.get('/users/:id', UsersController.findUserById);
+// // READ (ONE)
+// router.get('/users/:id', UsersController.findUserById);
 
 module.exports = router;
