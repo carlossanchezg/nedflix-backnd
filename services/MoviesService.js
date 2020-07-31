@@ -5,4 +5,5 @@ module.exports = {
     const newMovie = new Movies(body);
     return newMovie.save();
   },
+  getMovies: () => Movies.find(),
 };
