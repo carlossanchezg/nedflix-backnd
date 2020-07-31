@@ -5,5 +5,8 @@ module.exports = {
     const newUser = new Users(body);
     return newUser.save();
   },
-  findAllUsers: () => Users.find(),
+  getUsers: () => Users.find(),
+  findUserById: (id) => Users.findById(id),
+  findUserByIdandUpdate: (id, body) => Users.findByIdAndUpdate(id, body, { new: true }),
+  deleteUser: (id) => Users.findByIdAndDelete(id),
 };
