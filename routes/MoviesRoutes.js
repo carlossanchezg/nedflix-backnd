@@ -8,4 +8,7 @@ const { MoviesController } = require('../controllers');
 // CREATE
 router.post('/uploadmovie', MoviesController.uploadMovie);
 
+// READ (ALL)
+router.get('/movies', MoviesController.getMovies);
+
 module.exports = router;
