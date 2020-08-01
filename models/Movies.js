@@ -7,6 +7,7 @@ const MoviesSchema = new Schema({
     type: String,
     required: true,
     trim: true,
+    lowercase: true,
   },
   gender: {
     type: [String],
