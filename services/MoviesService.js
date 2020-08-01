@@ -6,4 +6,7 @@ module.exports = {
     return newMovie.save();
   },
   getMovies: () => Movies.find(),
+  findMovieById: (id) => Movies.findById(id),
+  findMovieByIdandUpdate: (id, body) => Movies.findByIdAndUpdate(id, body, { new: true }),
+  findMovieByIdandDelete: (id) => Movies.findByIdAndDelete(id),
 };
