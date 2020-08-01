@@ -20,4 +20,7 @@ router.patch('/movies/:id', MoviesController.findMovieByIdandUpdate);
 // DELETE
 router.delete('/movies/:id', MoviesController.findMovieByIdandDelete);
 
+// SEARCH MOVIE BY TITLE
+router.get('/searchmovie', MoviesController.searchMoviesByTitle);
+
 module.exports = router;
