@@ -9,4 +9,8 @@ module.exports = {
   findUserById: (id) => Users.findById(id),
   findUserByIdandUpdate: (id, body) => Users.findByIdAndUpdate(id, body, { new: true }),
   deleteUser: (id) => Users.findByIdAndDelete(id),
+  addList: (user, list) => {
+    user.user_list.push(list);
+    return user.save();
+  },
 };
