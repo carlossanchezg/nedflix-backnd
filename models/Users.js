@@ -3,6 +3,8 @@ const bcrypt = require('bcrypt');
 
 const SALT_WORK_FACTOR = 10;
 
+const { UserListsSchema } = require('./UserLists');
+
 const { Schema } = mongoose;
 
 const UsersSchema = new Schema({
@@ -21,15 +23,7 @@ const UsersSchema = new Schema({
     required: true,
     trim: true,
   },
-  user_list: [{
-    name_list: {
-      type: String,
-    },
-    list_content: [{
-      type: Schema.Types.ObjectId,
-      ref: 'Movies',
-    }],
-  }],
+  user_list: [UserListsSchema],
   is_active: {
     type: Boolean,
     default: true,
