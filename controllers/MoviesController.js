@@ -18,4 +18,32 @@ module.exports = {
       res.status(404).json(error);
     }
   },
+  findMovieById: async (req, res) => {
+    try {
+      const { id } = req.params;
+      const movie = await MoviesService.findMovieById(id);
+      res.status(200).json(movie);
+    } catch (error) {
+      res.status(404).json(error);
+    }
+  },
+  findMovieByIdandUpdate: async (req, res) => {
+    try {
+      const { id } = req.params;
+      const { body } = req;
+      const updatedMovie = await MoviesService.findMovieByIdandUpdate(id, body);
+      res.status(200).json(updatedMovie);
+    } catch (error) {
+      res.status(404).json(error);
+    }
+  },
+  findMovieByIdandDelete: async (req, res) => {
+    try {
+      const { id } = req.params;
+      await MoviesService.findMovieByIdandDelete(id);
+      res.status(200).json({ message: 'Deleted movie' });
+    } catch (error) {
+      res.status(404).json(error);
+    }
+  },
 };
