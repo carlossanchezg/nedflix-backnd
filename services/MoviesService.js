@@ -9,4 +9,5 @@ module.exports = {
   findMovieById: (id) => Movies.findById(id),
   findMovieByIdandUpdate: (id, body) => Movies.findByIdAndUpdate(id, body, { new: true }),
   findMovieByIdandDelete: (id) => Movies.findByIdAndDelete(id),
+  searchMoviesByTitle: (title) => Movies.find({ title }),
 };
