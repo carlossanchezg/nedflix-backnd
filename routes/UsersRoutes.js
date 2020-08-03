@@ -4,9 +4,13 @@ const router = express.Router();
 
 const { UsersController } = require('../controllers');
 
+const { UsersValidator } = require('../validators');
+
 // CRUD
 // CREATE
-router.post('/users', UsersController.create);
+router.post('/users',
+  UsersValidator.create,
+  UsersController.create);
 
 // // READ (ALL)
 router.get('/users', UsersController.getUsers);

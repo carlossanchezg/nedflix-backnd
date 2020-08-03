@@ -4,9 +4,13 @@ const router = express.Router();
 
 const { UserListsController } = require('../controllers');
 
+const { UserListsValidator } = require('../validators');
+
 // CRUD
 // CREATE
-router.post('/users/:id/newlist', UserListsController.createList);
+router.post('/users/:id/newlist',
+  UserListsValidator.create,
+  UserListsController.createList);
 
 // READ (ALL)
 router.get('/users/:id/lists', UserListsController.getAllUserLists);
