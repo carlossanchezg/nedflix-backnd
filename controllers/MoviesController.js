@@ -50,8 +50,8 @@ module.exports = {
     try {
       const { title } = req.query;
       const foundMovie = await MoviesService.searchMoviesByTitle(title);
-      console.log(req.query);
-      console.log(foundMovie);
+      // console.log(req.query);
+      // console.log(foundMovie);
       if (foundMovie.length === 0) res.status(404).json({ message: 'Movie not found' });
       res.status(200).json(foundMovie);
     } catch (error) {
