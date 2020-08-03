@@ -4,9 +4,13 @@ const router = express.Router();
 
 const { MoviesController } = require('../controllers');
 
+const { MoviesValidator } = require('../validators');
+
 // CRUD
 // CREATE
-router.post('/uploadmovie', MoviesController.uploadMovie);
+router.post('/uploadmovie',
+  MoviesValidator.create,
+  MoviesController.uploadMovie);
 
 // READ (ALL)
 router.get('/movies', MoviesController.getMovies);
