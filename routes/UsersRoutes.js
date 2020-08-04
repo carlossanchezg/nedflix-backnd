@@ -13,7 +13,7 @@ router.post('/users',
   UsersController.create);
 
 // // READ (ALL)
-router.get('/users', UsersController.getUsers);
+// router.get('/users', UsersController.getUsers);
 
 // // READ (ONE)
 router.get('/users/:id', UsersController.findUserById);
