@@ -6,6 +6,8 @@ const { MoviesController } = require('../controllers');
 
 const { MoviesValidator } = require('../validators');
 
+const { verifyToken } = require('../middlewares');
+
 // CRUD
 // CREATE
 router.post('/uploadmovie',
@@ -13,7 +15,9 @@ router.post('/uploadmovie',
   MoviesController.uploadMovie);
 
 // READ (ALL)
-router.get('/movies', MoviesController.getMovies);
+router.get('/movies',
+  verifyToken,
+  MoviesController.getMovies);
 
 // READ (ONE)
 router.get('/movies/:id', MoviesController.findMovieById);
