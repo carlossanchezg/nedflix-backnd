@@ -6,13 +6,14 @@ module.exports = {
     const newUser = new Users(body);
     return newUser.save();
   },
-  getUsers: () => Users.find(),
+  // getUsers: () => Users.find(),
   findUserById: (id) => Users.findById(id).populate({
     path: 'user_list',
     populate: {
       path: 'list_content',
     },
   }),
+  findUserByEmail: (email) => Users.findOne({ email }),
   findUserByIdandUpdate: (id, body) => Users.findByIdAndUpdate(id, body, { new: true }),
   deleteUser: (id) => Users.findByIdAndDelete(id),
   addList: (user, list) => {

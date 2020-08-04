@@ -10,14 +10,14 @@ module.exports = {
       res.status(400).json(error);
     }
   },
-  getUsers: async (req, res) => {
-    try {
-      const users = await UsersService.getUsers();
-      res.status(200).json(users);
-    } catch (error) {
-      res.status(404).json(error);
-    }
-  },
+  // getUsers: async (req, res) => {
+  //   try {
+  //     const users = await UsersService.getUsers();
+  //     res.status(200).json(users);
+  //   } catch (error) {
+  //     res.status(404).json(error);
+  //   }
+  // },
   findUserById: async (req, res) => {
     try {
       const { id } = req.params;
