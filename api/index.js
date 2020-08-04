@@ -10,7 +10,6 @@ api.use(cors());
 
 api.get('/', (req, res) => {
   res.send('<h1>Hi from nedflix 🥳</h1>');
-  // res.json({ message: 'Hi from nedflix🥳' });
 });
 
 // Routes
