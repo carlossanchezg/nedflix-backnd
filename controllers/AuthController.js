@@ -5,8 +5,10 @@ module.exports = {
   register: async (req, res) => {
     try {
       const newUser = await UsersService.create(req.body);
-      newUser.password = undefined;
-      res.status(201).json(newUser);
+      const token = createToken(newUser);
+      if (!token) res.status(400).json({ message: 'Error creatign token' });
+      // newUser.password = undefined;
+      res.status(201).json({ message: 'Succesfull', token });
     } catch (error) {
       res.status(400).json(error);
     }
