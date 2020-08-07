@@ -13,6 +13,8 @@ module.exports = {
       year: Joi.number().required(),
       cover: Joi.string().required(),
       movie_free: Joi.bool().default(false).required(),
+      video_trailer: Joi.string().required(),
+      video_movie: Joi.string().required(),
     }),
   }),
 };
