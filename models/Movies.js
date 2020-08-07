@@ -32,6 +32,16 @@ const MoviesSchema = new Schema({
     required: true,
     default: Boolean,
   },
+  video_trailer: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  video_movie: {
+    type: String,
+    required: true,
+    trim: true,
+  },
 });
 
 const Movies = mongoose.model('Movies', MoviesSchema);
