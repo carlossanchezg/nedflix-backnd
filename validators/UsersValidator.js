@@ -10,6 +10,7 @@ module.exports = {
       first_name: Joi.string().required(),
       email: Joi.string().email().required(),
       password: Joi.string().required(),
+      img_profile: Joi.string(),
     }),
   }),
 };
