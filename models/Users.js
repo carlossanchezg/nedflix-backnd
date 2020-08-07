@@ -17,6 +17,7 @@ const UsersSchema = new Schema({
     type: String,
     required: true,
     trim: true,
+    unique: true,
   },
   password: {
     type: String,
@@ -59,6 +60,16 @@ UsersSchema.pre('save', function (next) {
     });
   });
   return false;
+});
+
+// eslint-disable-next-line func-names
+UsersSchema.pre('save', function (next) {
+  const user = this;
+  const imgprofile = ['https://res.cloudinary.com/dyls6utsw/image/upload/v1594918579/nedflix%20project/nedflixavatar1_g4dc5j.png', 'https://res.cloudinary.com/dyls6utsw/image/upload/v1594918846/nedflix%20project/nedflixavatar2_pmpths.jpg', 'https://res.cloudinary.com/dyls6utsw/image/upload/v1594918857/nedflix%20project/nedflixavatar3_gz7oyf.png', 'https://res.cloudinary.com/dyls6utsw/image/upload/v1594918864/nedflix%20project/nedflixavatar4_e4ofdw.png', 'https://res.cloudinary.com/dyls6utsw/image/upload/v1594918872/nedflix%20project/nedflixavatar5_ssxbo4.png'];
+  const randomImgprofile = imgprofile[Math.floor(Math.random() * imgprofile.length)];
+
+  user.img_profile = randomImgprofile;
+  return next();
 });
 
 const Users = mongoose.model('Users', UsersSchema);
