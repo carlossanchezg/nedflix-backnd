@@ -4,6 +4,8 @@ const { comparePasswords, createToken } = require('../utils');
 module.exports = {
   register: async (req, res) => {
     try {
+      const userExist = await UsersService.findUserByEmail(req.body.email);
+      if (userExist) res.status(400).json({ message: 'User already exists' });
       const newUser = await UsersService.create(req.body);
       const token = createToken(newUser);
       if (!token) res.status(400).json({ message: 'Error creatign token' });
