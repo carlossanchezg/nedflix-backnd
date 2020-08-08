@@ -42,6 +42,19 @@ const MoviesSchema = new Schema({
     required: true,
     trim: true,
   },
+  nedflix_originals: {
+    type: Boolean,
+    required: true,
+  },
+  trending_movie: {
+    type: Boolean,
+    required: true,
+  },
+  large_cover: {
+    type: String,
+    required: true,
+    trim: true,
+  },
 });
 
 const Movies = mongoose.model('Movies', MoviesSchema);
