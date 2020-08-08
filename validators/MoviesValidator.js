@@ -15,6 +15,9 @@ module.exports = {
       movie_free: Joi.bool().default(false).required(),
       video_trailer: Joi.string().required(),
       video_movie: Joi.string().required(),
+      nedflix_originals: Joi.bool().required(),
+      trending_movie: Joi.bool().required(),
+      large_cover: Joi.string().required(),
     }),
   }),
 };
