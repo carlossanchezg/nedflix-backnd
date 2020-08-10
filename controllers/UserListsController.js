@@ -30,7 +30,7 @@ module.exports = {
       const user = await UsersService.findUserById(id);
       const userList = await UsersService.findListById(user, list);
       // const userList = await UsersService.findUserAndyourListById(id, list);
-      res.status(200).json(userList);
+      res.status(200).json([userList]);
     } catch (error) {
       res.status(404).json(error);
     }

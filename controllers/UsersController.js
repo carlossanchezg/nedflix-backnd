@@ -23,7 +23,7 @@ module.exports = {
       const { id } = req.params;
       const foundUser = await UsersService.findUserById(id);
       foundUser.password = undefined;
-      res.status(200).json(foundUser);
+      res.status(200).json([foundUser]);
     } catch (error) {
       res.status(404).json(error);
     }
